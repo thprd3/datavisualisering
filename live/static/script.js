@@ -1,0 +1,1 @@
+document.body.innerHTML+="Dette er fra script.js =)"

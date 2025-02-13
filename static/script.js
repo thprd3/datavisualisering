@@ -1,0 +1,1 @@
+// document.querySelector("body").innerHTML+="<p>Dette er fra script.js</p>"

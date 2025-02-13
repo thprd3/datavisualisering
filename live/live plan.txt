@@ -1,0 +1,29 @@
+ca: 15-20 min live / 30-40 min par x 3
+* men ser an, holde med alle
+* aller først konsolidere og sosialisere med 30/60/90
+*** hva er flask? hva er fullstack? hva brukes hver av disse til: html, python (flask), sqlite/mariadb?
+* til slutt: oppsummering og qa -> gjenskap det solo i et nytt repo - vi skal jobbe videre på fellesen i morra :)
+
+0: ingen chatgpt, spør hverandre og meg, følg meg nå så får dere masssse igjen for det. nevne målet, evt vise
+1: installere og sette opp Flask i VM + routing + HTML templates + CSS og JS.
+*** routes må returnere noe. for eksempel html, men også noe annet. kan også returnere en funksjon som returnerer noe :)
+*** snakk også om logging, se i terminalen, flask run, status koder
+2: Jinja templating: base.html, login.html, register.html og tilhørende routes
+3: sette opp database + tabeller, installere og bruke SQLite-extension 
+*** prate om sqlite vs mariadb og sånt
+*** prate om produksjon vs testing
+4: variabel fra Python til HTML
+5: GET og POST klient/tjener, registrering og innlogging
+6: sessions
+---- kom hit dag 1, husk repetisjon ----
+7: roller ("admin" og DEFAULT 'user') + /admin med sessions
+8: hashing av PW med bcrypt
+9: errorhandler for global håndtering av statuskoder
+10: context_processor for globale variabler
+---- kom hit dag 2! ----
+11: with-kontekst + .env-fil med .gitignore for db-connection
+12: migrere til mariadb
+13: waitress og nginx...
+x: requirements.txt, do it again fra start, CLI-commands, flash()
+
+ikke execute("foo"), men sql = "foo", execute(sql, (values)) 

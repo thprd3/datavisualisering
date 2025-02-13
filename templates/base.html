@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>title fra base</title> {% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    {% include "navbar.html" %}
+    {% block content %}
+        <p>Dette er block content fra base.html</p>
+    {% endblock %}
+
+    {% block feedback %}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div style="background-color: lightcoral;">
+                    <h2>Feedback from server</h2>
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    {% endblock %}
+<script src="{{ url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

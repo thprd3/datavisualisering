@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div>
+    {% if username %}
+        <p>Hei, {{username}}. Din rolle er: {{role}} </p>
+    {% endif %}
+        <a href="/home">Home</a>
+        <a href="/register">Register</a>
+        <a href="/profile">Profile</a>
+        {% if username %}
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">Login</a>
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    {% if message %}
+        <p style="color:red;">{{message}}</p>
+    {% endif %}
+    {% block feedback %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div style="background-color: lightcoral;">
+                <h2>Feedback from server</h2>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo tempora placeat debitis recusandae modi, natus laboriosam repellendus possimus voluptate officia eius aliquid quaerat quam doloribus nisi quidem incidunt laudantium optio.</p>
+    </footer>
+</body>
+</html>

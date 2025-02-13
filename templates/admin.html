@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{% block title %}<title>Admin</title>{% endblock %}
+<h1>All users</h1>
+<ul> <!-- burde være <table> men meh -->
+    {% for user in users %}
+        <li>{{ user }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
