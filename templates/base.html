@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 <body>
-    {% include "navbar.html" %}
     {% block content %}
-        <p>Dette er block content fra base.html</p>
     {% endblock %}
 
     {% block feedback %}
