@@ -1,5 +1,0 @@
-litt surr med å kjøre fra terminalen. krever at man setter opp .env for debugging tror jeg?
-mystisk bug på flere hvor INSERT kjører twice i init_db. nbd men idk.
-session.get("username") returnerer bra uansett, session["username"] generer keyError hvis undefined
-
-all javascript i .js-fil, ellers får vi noe desync/race condition greier

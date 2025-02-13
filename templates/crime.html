@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+
+<body>
+    <h1>Rå, ubehandlet data fra API-kallet:</h1>
+    {{ data }}
+    <h1>Med litt pynt:</h1>
+    {% if "error" in data %}
+    <p style="color: red;">Error: {{ data.error }}</p>
+    {% else %}
+    <h2>{{data.title}}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Age Group</th>
+                <th>Number of Crimes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data.crime_data %}
+            <tr>
+                <td>{{ entry.age_group }}</td>
+                <td>{{ entry.crimes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+    <h1>Chart.js</h1>
+    <canvas id="crimeChart"></canvas>
+</body>
+
+</html>

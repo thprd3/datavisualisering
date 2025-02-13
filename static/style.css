@@ -1,6 +1,17 @@
 * {
     font-family: 'Segoe UI';
 }
-/* body::after {
-    content: 'Dette er fra style.css'
-} */
+
+section {padding: 1vw;margin-bottom: 1vh;}
+
+section:first-of-type {background-color: lightcoral;}
+section:last-of-type {background-color: lightgoldenrodyellow;}
+
+#charts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    height: 400px;
+}

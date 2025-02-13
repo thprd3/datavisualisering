@@ -1,10 +1,40 @@
-{% extends 'base.html' %}
-{% block content %}
-{% block title %}<title>Admin</title>{% endblock %}
-<h1>All users</h1>
-<ul> <!-- burde være <table> men meh -->
-    {% for user in users %}
-        <li>{{ user }}</li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Graphs go here :)</h1>
+    <section>
+        <h2>Rådata</h2>
+        <p>Dette er dataen slik den ser ut hentet fra .csv -> SQL -> df med Pandas, og derfra til HTML med Flask:</p>
+        <ul>
+            {% for row in data %}
+            <li>{{ row }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>Chart.js</h2>
+        <div id="charts">
+            <div>
+                <h3>Temperaturer i Oslo siste 14 dager</h3>
+                <div class="container">
+                    <canvas style="height: 20vh;" id="temperatureChart"></canvas>
+                </div>
+            </div>
+            <div>
+                <h3>Nedbør i Oslo siste 14 dager</h3>
+                <div class="container">
+                    <canvas style="height: 200px;" id="precipitationChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
