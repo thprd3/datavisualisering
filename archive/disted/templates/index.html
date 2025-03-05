@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Værdata og Testdata</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- importer chart.js -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <h1>Værdata</h1>
+
+    <button onclick="loadWeatherData()">Oppdater værdata</button>
+
+    <!-- Tabell for værdata -->
+    <table>
+        <thead>
+            <tr>
+                <th>Dato</th>
+                <th>Temperatur (°C)</th>
+            </tr>
+        </thead>
+        <tbody id="weatherTableBody">
+            <tr><td colspan="2">Ingen data tilgjengelig</td></tr>
+        </tbody>
+    </table>
+
+    <!-- Graf for værdata -->
+    <h2>Temperatur over tid</h2>
+    <canvas id="weatherChart"></canvas>
+
+    <!-- Skjema for å sende inn ny temperatur -->
+    <h3>Legg til ny temperaturmåling</h3>
+    <label for="dateInput">Dato:</label>
+    <input type="date" id="dateInput">
+    <label for="tempInput">Temperatur:</label>
+    <input type="number" id="tempInput" step="0.1">
+    <button onclick="addTemperature()">Legg til</button>
+
+    <hr>
+
+    <h1>Testdata</h1>
+
+    <!-- Skjema for å sende testdata -->
+    <h3>Send testdata</h3>
+    <label for="testHeader">Header:</label>
+    <input type="text" id="testHeader">
+    <label for="testMessage">Melding:</label>
+    <input type="text" id="testMessage">
+    <button onclick="sendTestData()">Send testdata</button>
+
+</body>
+</html>
